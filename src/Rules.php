@@ -9,4 +9,5 @@ class Rules
      */
     const NUMBER  = 'Validator\Rules\Number';
     const BOOLEAN = 'Validator\Rules\Boolean';
+    const EMAIL = 'Validator\Rules\Email';
 }
