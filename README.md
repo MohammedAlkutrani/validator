@@ -8,6 +8,6 @@ $v->validate([
     'name'=>'mohammed',
     'age' => 15
     ],[
-        [Rules::NUMBER,Rules::NUMBER,Rules::NUMBER],
+        [Rules::NUMBER],
         [Rules::NUMBER]
-    ]); ```
+    ]);`
