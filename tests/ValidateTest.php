@@ -2,15 +2,15 @@
 
 use PHPUnit\Framework\TestCase;
 use Validator\Validate;
-use Validator\Role;
+use Validator\Rules;
 
 class ValidateTest extends TestCase
 {
     public function testPushAndPop()
     {
         $v = new Validate([
-                ['name'=>'mohammed'] => [Role::NUMBER],
-                ['age' => 15] => [Role::NUMBER],
+                ['name'=>'mohammed'] => [Rules::NUMBER],
+                ['age' => 15] => [Rules::NUMBER],
             ]);
     }
 }

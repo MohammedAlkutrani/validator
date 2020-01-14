@@ -20,7 +20,9 @@ class Validate
     protected $messages = [];
 
     /**
+     * take the data and the rules iltrate
      * @param array $data.
+     * @param array $rules.
      * @return void
      */
     public function validate(array $data, array $rules)
@@ -37,7 +39,7 @@ class Validate
     }
 
     /** */
-    public function ruleFitcher(array $rules, $attribute, $value)
+    private function ruleFitcher(array $rules, $attribute, $value)
     {
         foreach($rules as $rule) {
             $this->ruleChecker(new $rule, $attribute, $value);
@@ -45,7 +47,7 @@ class Validate
     }
 
     /** */
-    public function ruleChecker(RuleInterface $rule, $attribute, $value)
+    private function ruleChecker(RuleInterface $rule, $attribute, $value)
     {
         if(!$rule->isValid($value)) {
             $this->messages=[$attribute] = $rule->getMessage($attribute);
