@@ -9,5 +9,5 @@ $v->validate([
     'age' => 15
     ],[
         [Rules::NUMBER],
-        [Rules::NUMBER]
+        [Rules::BOOLEAN]
     ]);`
