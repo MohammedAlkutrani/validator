@@ -36,6 +36,9 @@ class Validate
             $rulesIndex++;
         }
 
+        if($this->messages) {
+            throw new ValidationException($this->messages);
+        }
     }
 
     /** */
