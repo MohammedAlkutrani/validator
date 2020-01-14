@@ -1,0 +1,22 @@
+{
+    "name": "mohammedalkutrani/validator",
+    "description": "validate form-data",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohammed Alkutrani",
+            "email": "mohammedalkutrani@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Validator\\":"./src" 
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    }
+}
