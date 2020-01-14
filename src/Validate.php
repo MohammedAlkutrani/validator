@@ -53,7 +53,7 @@ class Validate
     private function ruleChecker(RuleInterface $rule, $attribute, $value)
     {
         if(!$rule->isValid($value)) {
-            $this->messages=[$attribute] = $rule->getMessage($attribute);
+            $this->messages[]= [$attribute =>$rule->getMessage($attribute)];
         }
     }
 }
