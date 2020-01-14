@@ -7,5 +7,6 @@ class Rules
     /**
      * @var 
      */
-    const NUMBER = 'Validator\Rules\Number';
+    const NUMBER  = 'Validator\Rules\Number';
+    const BOOLEAN = 'Validator\Rules\Boolean';
 }
