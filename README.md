@@ -1,7 +1,7 @@
 # validator
 
 ## simple usage
-`use Validator\Validate;
+``` use Validator\Validate;
 use Validator\Rules;
 $v = new Validate;
 $v->validate([
@@ -10,4 +10,4 @@ $v->validate([
     ],[
         [Rules::NUMBER,Rules::NUMBER,Rules::NUMBER],
         [Rules::NUMBER]
-    ]);`
+    ]); ```
