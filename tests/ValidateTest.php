@@ -8,9 +8,7 @@ class ValidateTest extends TestCase
 {
     public function testPushAndPop()
     {
-        $v = new Validate([
-                ['name'=>'mohammed'] => [Rules::NUMBER],
-                ['age' => 15] => [Rules::NUMBER],
-            ]);
+        $v = true;
+        $v->assertEquals(false,$v);
     }
 }
