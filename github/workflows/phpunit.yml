@@ -1,0 +1,13 @@
+name: PHPUnit
+on: [pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Composer dependencies
+      run: composer install --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+    - name: Configure matchers
+      uses: mheap/phpunit-matcher-action@master
+    - name: Run Tests
+      run: ./vendor/bin/phpunit --teamcity test
