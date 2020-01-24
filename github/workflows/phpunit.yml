@@ -1,5 +1,5 @@
 name: PHPUnit
-on: [pull_request]
+on: [pull_request,commit]
 jobs:
   build:
     runs-on: ubuntu-latest
