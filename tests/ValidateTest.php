@@ -12,4 +12,10 @@ class ValidateTest extends TestCase
         $v = true;
         $v->assertEquals(false,$v);
     }
+
+    public function testActionTest()
+    {
+        $v = true;
+        $v->assertEquals(false,$v);
+    }
 }
