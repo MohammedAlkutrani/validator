@@ -3,14 +3,18 @@
 use PHPUnit\Framework\TestCase;
 use Validator\Validate;
 use Validator\Rules;
+use Validator\ValidationException;
 
 class ValidateTest extends TestCase
 {
-    public function testPushAndPop()
+    public function testThrowException()
     {
-        $v = new Validate([
-                ['name'=>'mohammed'] => [Rules::NUMBER],
-                ['age' => 15] => [Rules::NUMBER],
+        $v = new Validate(
+                ['name'=>'mohammed','age' => 15] ,[ [Rules::NUMBER],
+               [Rules::NUMBER],
             ]);
+            var_dump($v);
+            die();
+        $this->expectException(ValidationException::class);
     }
 }
