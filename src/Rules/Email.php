@@ -4,18 +4,17 @@ namespace Validator\Rules;
 
 use Validator\RuleInterface;
 
-class Number implements RuleInterface
+class Email implements RuleInterface
 {
     /**
      * Check if the value is passed.
-     * 
+     *
      * @param mix $value
      * @return boolean
      */
     public function isValid($value) : bool
     {
-        if(!filter_var($value, FILTER_VALIDATE_EMAIL))
-        {
+        if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return false;
         }
 
@@ -24,7 +23,7 @@ class Number implements RuleInterface
 
     /**
      * Get error message.
-     * 
+     *
      * @param mix $attribute
      * @return string
      */

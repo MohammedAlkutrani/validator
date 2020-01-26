@@ -8,14 +8,13 @@ class Number implements RuleInterface
 {
     /**
      * Check if the value is passed.
-     * 
+     *
      * @param mix $value
      * @return boolean
      */
     public function isValid($value) : bool
     {
-        if(!is_int($value) && !is_float($value))
-        {
+        if (!is_int($value) && !is_float($value)) {
             return false;
         }
 
@@ -24,7 +23,7 @@ class Number implements RuleInterface
 
     /**
      * Get error message.
-     * 
+     *
      * @param mix $attribute
      * @return string
      */

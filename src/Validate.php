@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Validator;
 
@@ -19,6 +19,11 @@ class Validate
      */
     protected $messages = [];
 
+    public function make(array $data, array $rules)
+    {
+        return $this->validate($data, $rules);
+    }
+    
     /**
      * take the data and the rules iltrate
      * @param array $data.
@@ -29,31 +34,41 @@ class Validate
     {
         $this->data = $data;
         $this->rules = $rules;
-
-        $rulesIndex = 0;
-        foreach($data as $attribute => $value) {
-            $this->ruleFitcher($rules[$rulesIndex],$attribute,$value);
-            $rulesIndex++;
+        
+        foreach ($rules as $faild => $faildRules) {
+            if (!array_key_exists($faild, $data)) {
+                $this->data[$faild] = '';
+            }
+            $this->ruleFitcher($faildRules, $faild);
         }
 
-        if($this->messages) {
-            throw new ValidationException($this->messages);
-        }
+        return $this;
     }
 
-    /** */
-    private function ruleFitcher(array $rules, $attribute, $value)
+    public function isPassed()
     {
-        foreach($rules as $rule) {
-            $this->ruleChecker(new $rule, $attribute, $value);
+        if ($this->messages) {
+            return false;
+        }
+        return true;
+    }
+    public function getMessages()
+    {
+        return $this->messages;
+    }
+    /** */
+    private function ruleFitcher(array $rules, $attribute)
+    {
+        foreach ($rules as $rule) {
+            $this->ruleChecker(new $rule, $attribute, $this->data[$attribute]);
         }
     }
 
     /** */
     private function ruleChecker(RuleInterface $rule, $attribute, $value)
     {
-        if(!$rule->isValid($value)) {
-            $this->messages[]= [$attribute =>$rule->getMessage($attribute)];
+        if (!$rule->isValid($value)) {
+            $this->messages[$attribute][]= $rule->getMessage($attribute);
         }
     }
 }

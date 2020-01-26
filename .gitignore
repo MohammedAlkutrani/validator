@@ -1,4 +1,4 @@
-vendor/
-index.php
+/vendor
 composer.lock
 .phpunit.result.cache
+index.php

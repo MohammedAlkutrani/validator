@@ -6,7 +6,7 @@ interface RuleInterface
 {
     /**
      * Check if the value is passed.
-     * 
+     *
      * @param mix $value
      * @return boolean
      */
@@ -14,7 +14,7 @@ interface RuleInterface
 
     /**
      * Get error message.
-     * 
+     *
      * @param mix $attribute
      * @return string
      */

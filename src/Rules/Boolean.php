@@ -8,13 +8,13 @@ class Boolean implements RuleInterface
 {
     /**
      * Check if the value is passed.
-     * 
+     *
      * @param mix $value
      * @return boolean
      */
     public function isValid($value) : bool
     {
-        if (!\is_bool($value)) { 
+        if (!\is_bool($value)) {
             return false;
         }
 
@@ -23,7 +23,7 @@ class Boolean implements RuleInterface
 
     /**
      * Get error message.
-     * 
+     *
      * @param mix $attribute
      * @return string
      */

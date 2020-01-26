@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 namespace Validator;
 
 class Rules
 {
     /**
-     * @var 
+     * @var
      */
     const NUMBER  = 'Validator\Rules\Number';
     const BOOLEAN = 'Validator\Rules\Boolean';
