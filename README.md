@@ -1,4 +1,6 @@
-# validator
+# Validator
+It's a simple packge for validation the data before touch your database.
+
 
 ## simple usage
 ``` use Validator\Validate;

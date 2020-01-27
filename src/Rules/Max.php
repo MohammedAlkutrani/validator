@@ -13,14 +13,14 @@ class Max implements RuleInterface
 
     /**
      * Passing the dynamic arrguments for the rule.
-     * 
+     *
      * @param int $maxValue
-     * 
-     * @return void 
+     *
+     * @return void
      */
     public function __construct($maxValue)
     {
-        $this->maxValue = $maxValue;    
+        $this->maxValue = $maxValue;
     }
 
     /**
