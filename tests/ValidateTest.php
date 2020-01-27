@@ -1,10 +1,10 @@
 <?php
 
+namespace Test;
+
 use PHPUnit\Framework\TestCase;
-use Validator\Validate;
 use Validator\Facade\Validation;
 use Validator\Rules;
-use Validator\ValidationException;
 
 class ValidateTest extends TestCase
 {
@@ -25,23 +25,6 @@ class ValidateTest extends TestCase
                 'ma' => [Rules::NUMBER],
             ]);
          $this->assertEquals(false,$v->isPassed());
-    }
-
-    public function testValidateNumber()
-    {
-        $v = Validation::make(
-            [
-                'age'=>25,
-                'ma'=>'mohammed'
-            ],[
-                'age'=> [Rules::NUMBER],
-                'ma' => [Rules::NUMBER],
-            ]);
-            // print_r($v->getMessages());
-            // die();
-         $this->assertEquals(false,$v->isPassed());
-         $this->assertEquals($v->getMessages()['ma'][0],'the ma should be a number');
-         
     }
     
 }
