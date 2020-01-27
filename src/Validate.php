@@ -50,7 +50,12 @@ class Validate
         return $this;
     }
 
-    public function isPassed()
+    /**
+     * Determine if the data is passed.
+     * 
+     * @return bool
+     */
+    public function isPassed() : bool
     {
         if ($this->messages) {
             return false;
