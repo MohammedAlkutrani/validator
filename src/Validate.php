@@ -4,6 +4,7 @@ namespace Validator;
 
 class Validate
 {
+    
     /**
      * @var array
      */
@@ -18,6 +19,15 @@ class Validate
      * @var array
      */
     protected $messages = [];
+
+    /** */
+    protected $parser;
+
+    /** */
+    public function __construct(Parser $parser)
+    {
+        $this->parser = $parser;
+    }
 
     /**
      * wrapping the validation.
@@ -88,7 +98,15 @@ class Validate
     private function ruleFitcher(array $rules, $attribute) : void
     {
         foreach ($rules as $rule) {
-            $this->ruleChecker(new $rule(), $attribute, $this->data[$attribute]);
+            if($this->parser->has($rule, '|'))
+            {
+                $arguments = $this->parser->getArguments($rule);
+                $rule = $this->parser->getRule($rule);
+                $this->ruleChecker(new $rule(...$arguments), $attribute, $this->data[$attribute]);
+            }else
+            {
+                $this->ruleChecker(new $rule(), $attribute, $this->data[$attribute]);
+            }
         }
     }
 
