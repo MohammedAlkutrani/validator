@@ -101,7 +101,7 @@ class Validate
      * 
      * @return void
      */
-    private function ruleChecker(RuleInterface $rule, $attribute, $value) 
+    private function ruleChecker(RuleInterface $rule, $attribute, $value) : void
     {
         if (!$rule->isValid($value)) {
             $this->messages[$attribute][] = $rule->getMessage($attribute);
