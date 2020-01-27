@@ -9,7 +9,7 @@ class Validation
 {
     public static function __callStatic($name, $arguments)
     {
-        $v = new Validate(new Parser);
+        $v = new Validate(new Parser());
 
         return $v->{$name}(...$arguments);
     }
