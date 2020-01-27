@@ -10,9 +10,10 @@ class Email implements RuleInterface
      * Check if the value is passed.
      *
      * @param mix $value
-     * @return boolean
+     *
+     * @return bool
      */
-    public function isValid($value) : bool
+    public function isValid($value): bool
     {
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return false;
@@ -25,9 +26,10 @@ class Email implements RuleInterface
      * Get error message.
      *
      * @param mix $attribute
+     *
      * @return string
      */
-    public function getMessage($attribute) : string
+    public function getMessage($attribute): string
     {
         return "the $attribute should be an email";
     }

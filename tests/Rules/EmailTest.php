@@ -8,28 +8,26 @@ use Validator\Rules;
 
 class EmailTest extends TestCase
 {
-   
     public function testValidateEmailFalse()
     {
         $v = Validation::make(
             [
-                'ma'=>'mohammed'
-            ],[
+                'ma'=> 'mohammed',
+            ], [
                 'ma' => [Rules::EMAIL],
             ]);
-         $this->assertEquals(false,$v->isPassed());
-         $this->assertEquals($v->getMessages()['ma'][0],'the ma should be an email'); 
+        $this->assertEquals(false, $v->isPassed());
+        $this->assertEquals($v->getMessages()['ma'][0], 'the ma should be an email');
     }
 
     public function testValidateEmailTrue()
     {
         $v = Validation::make(
             [
-                'ma'=>'mohammed@gmail.com'
-            ],[
+                'ma'=> 'mohammed@gmail.com',
+            ], [
                 'ma' => [Rules::EMAIL],
             ]);
-         $this->assertEquals(true,$v->isPassed());
+        $this->assertEquals(true, $v->isPassed());
     }
-    
 }
