@@ -59,7 +59,12 @@ class Validate
         return true;
     }
 
-    public function getMessages()
+    /**
+     * Get the error messages
+     * 
+     * @return array $messages
+     */
+    public function getMessages() : array
     {
         return $this->messages;
     }
