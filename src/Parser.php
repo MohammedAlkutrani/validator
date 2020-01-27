@@ -12,13 +12,14 @@ class Parser
      *
      * @return bool
      */
-    public function has($haystack, string $needles) : bool
+    public function has($haystack, string $needles): bool
     {
         foreach ((array) $needles as $needle) {
             if ($needle !== '' && mb_strpos($haystack, $needle) !== false) {
                 return true;
             }
         }
+
         return false;
     }
 
@@ -29,10 +30,11 @@ class Parser
      *
      * @return array
      */
-    public function getArguments(string $data) : array
+    public function getArguments(string $data): array
     {
         $toArray = explode('|', $data);
         $toArray = $this->cleanArguments($toArray);
+
         return $toArray;
     }
 
@@ -43,9 +45,10 @@ class Parser
      *
      * @return array
      */
-    public function cleanArguments(array $arguments) : array
+    public function cleanArguments(array $arguments): array
     {
         array_shift($arguments);
+
         return $arguments;
     }
 
@@ -56,9 +59,10 @@ class Parser
      *
      * @return string
      */
-    public function getRule(string $rule) : string
+    public function getRule(string $rule): string
     {
         $toArray = explode('|', $rule);
+
         return $toArray[0];
     }
 }
