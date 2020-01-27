@@ -19,6 +19,9 @@ class Validate
      */
     protected $messages = [];
 
+    /**
+     * wra
+     */
     public function make(array $data, array $rules)
     {
         return $this->validate($data, $rules);
