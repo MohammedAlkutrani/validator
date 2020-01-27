@@ -21,7 +21,7 @@ class BooleanTest extends TestCase
          $this->assertEquals($v->getMessages()['ma'][0],'the ma should be a boolean'); 
     }
 
-    public function testValidateNumberTrue()
+    public function testValidateBooleanTrue()
     {
         $v = Validation::make(
             [
