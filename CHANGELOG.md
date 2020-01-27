@@ -1,0 +1,1 @@
+- Version [0.0.0](#what's-new-in-validator-000-release-date-jan-27-2013) (release date: Jan 27, 2020)
