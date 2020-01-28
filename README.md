@@ -12,6 +12,9 @@ It's a simple packge for validation the data before touch your database.
 - Implements your own rule.
 - Test 100%.
 
+## Installation
+`composer require mohammedalkutrani/validator`
+
 ## Simple Usage
 ``` 
     use Validator\Facade\Validation;
@@ -56,4 +59,7 @@ The result
     )
 ```
 
-## Advanced Usage
+<!-- ## Advanced Usage
+
+#### How can I implement my own rules ?
+to implement your own rules  -->
