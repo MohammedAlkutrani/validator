@@ -27,8 +27,8 @@ It's a simple packge for validation the data before touch your database.
             'age' => 25
         ], [
             // the rules for the data.
-            'name' => [Rules::EMAIL, Rules::MIN.'|4'],
-            'age' => [Rules::NUMBER]
+            'name' => [Rules::NUMBER, Rules::MIN.'|4'],
+            'age' => [Rules::EMAIL]
         ]
     );
 
