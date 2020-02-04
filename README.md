@@ -16,7 +16,7 @@ It's a simple packge for validation the data before touch your database.
 `composer require mohammedalkutrani/validator`
 
 ## Simple Usage
-``` 
+``` php
     use Validator\Facade\Validation;
     use Validator\Rules;
 
@@ -42,7 +42,7 @@ It's a simple packge for validation the data before touch your database.
 
 The result
 
-```
+```php
     Array
     (
         [name] => Array
