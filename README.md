@@ -1,4 +1,6 @@
 # Validator
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/mohammedalkutrani/validator.svg?style=flat-square)](https://packagist.org/packages/mohammedalkutrani/validator)
+
 <center>
 
 It's a simple packge for validation the data before touch your database.
